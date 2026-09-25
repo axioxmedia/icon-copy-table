@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图标复制表</title>
+  <link rel="icon" href="/brand/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body class="aio-app axiox-shell">
+  <div class="bg-grid"></div>
+  <div class="floor"></div>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark"><img src="/brand/logo.png" alt="Axiox" /></div>
+        <div>
+          <h1 data-i18n="appName">图标复制表</h1>
+          <p data-i18n="appSub">专用区字符复制 · 分页加载</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div class="theme-switch" id="themeSwitch" data-on="light" role="group">
+          <span class="theme-slider" aria-hidden="true"></span>
+          <button type="button" data-theme="gold" id="themeGold">
+            <span data-i18n="themeGold">黑金</span>
+          </button>
+          <button type="button" data-theme="light" id="themeLight">
+            <span data-i18n="themeLight">浅色</span>
+          </button>
+        </div>
+        <div class="lang-switch" id="uiLangSwitch">
+          <button type="button" id="langZh" class="on">中文</button>
+          <button type="button" id="langEn">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="steps" id="stepNav"></nav>
+
+    <section class="workspace">
+      <article class="wizard-card on" id="stage0">
+        <div class="kicker">Step 01</div>
+        <h2 data-i18n="step1Title">选择字体</h2>
+        <p class="lead" data-i18n="step1Lead">先选定一套字形。按钮只显示家族名，不含发行套件全称。</p>
+        <div class="family-row" id="familyRow"></div>
+        <label class="remember">
+          <input type="checkbox" id="remember" checked />
+          <span data-i18n="remember">记住本次选择</span>
+        </label>
+        <div class="actions">
+          <button type="button" class="primary" id="toTable" disabled data-i18n="nextTable">打开复制表</button>
+        </div>
+      </article>
+
+      <article class="wizard-card" id="stage1">
+        <div class="kicker">Step 02</div>
+        <h2 data-i18n="step2Title">复制表</h2>
+        <p class="lead" data-i18n="step2Lead">点击卡片复制专用区字符。粘贴到 Unreal Text 字段，不要输入英文名。</p>
+        <div class="toolbar">
+          <div class="field grow">
+            <input id="q" type="search" autocomplete="off" data-i18n-placeholder="searchPh" placeholder="按英文名或码位搜索，例如 skull / biohazard" />
+          </div>
+          <label class="size-lab">
+            <span data-i18n="pageSize">每页</span>
+            <select id="pageSize"></select>
+          </label>
+          <span class="count" id="count"></span>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div class="pager" id="pager"></div>
+        <div class="actions">
+          <button type="button" class="ghost" id="backFamily" data-i18n="back">返回字体</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <footer class="app-version" id="appVersion">v1.1.0</footer>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Icon Copy Table — Windows EXE
+
+1. Install Python 3.11 or 3.12 from python.org. Check "Add python.exe to PATH".
+2. Unzip this folder.
+3. Double-click build_exe.bat.
+4. Result: dist\IconCopyTable.exe
+
+Alternate:
+  powershell -ExecutionPolicy Bypass -File .\build_exe.ps1
+
+Source run without an EXE:
+  start.bat
+
+If the window does not open, send icon_copy_table.log from the same folder as the EXE.
+Unsigned PyInstaller binaries may trigger SmartScreen. That is expected.
